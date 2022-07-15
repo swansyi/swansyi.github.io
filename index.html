@@ -270,6 +270,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://swansyi.github.io/2022/07/15/ue4-D8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群青偶记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/07/15/ue4-D8/" itemprop="url">ue4-D8</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-15T18:13:37+08:00">
+                2022-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E6%8A%80/" itemprop="url" rel="index">
+                    <span itemprop="name">杂技</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="蓝图02课：点击开关门"><a href="#蓝图02课：点击开关门" class="headerlink" title="蓝图02课：点击开关门"></a>蓝图02课：点击开关门</h1><h2 id="门蓝图类"><a href="#门蓝图类" class="headerlink" title="门蓝图类"></a>门蓝图类</h2><p>新建一个门蓝图类</p>
+<ul>
+<li>添加组件添加门模型</li>
+<li>加入门和门框</li>
+<li>坐标轴在门轴上才可以开关</li>
+</ul>
+<p>Q:如何改变轴？</p>
+<ul>
+<li>添加组件scene</li>
+<li>以scene的轴为新轴</li>
+</ul>
+<p>添加盒体碰撞（与门层级相同，否则会跟着门移动）</p>
+<p>蓝图给box加入begin&amp;end overlap<br>加入时间轴<br>..</p>
+<p>设置相对位置旋转</p>
+<ul>
+<li>SetRelativeRotation</li>
+</ul>
+<p>三个旋转区别</p>
+<ul>
+<li>SetActorRotation：旋转一整个蓝图类</li>
+<li>relative&amp;world：旋转类内部某个组件</li>
+</ul>
+<h2 id="互动开关门"><a href="#互动开关门" class="headerlink" title="互动开关门"></a>互动开关门</h2><h3 id="e开关门"><a href="#e开关门" class="headerlink" title="e开关门"></a>e开关门</h3><p>加入gate节点<br>在gate的enter写入条件（如press e）<br>控制玩家输入</p>
+<ul>
+<li>enable&amp;disable input</li>
+<li>加入get player controller得到玩家控制器</li>
+</ul>
+<p>flipflop节点（两个条件反复横跳）</p>
+<h3 id="点击开关门"><a href="#点击开关门" class="headerlink" title="点击开关门"></a>点击开关门</h3><p>door模型加入on click事件<br>开启获得点击模型选项<br>1.方法一</p>
+<ul>
+<li>世界游戏类别加入新的类别</li>
+<li>勾选enable click event和show mouse cursor</li>
+</ul>
+<p>2.方法二</p>
+<ul>
+<li>蓝图类中在get player controller添加show mouse cursor</li>
+<li>加入条件并勾选显示</li>
+<li>默认显示记得关闭</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://swansyi.github.io/2022/07/12/ue4-D7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1579,152 +1759,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://swansyi.github.io/2022/06/26/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="群青偶记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/06/26/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/" itemprop="url">写在前面</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-26T19:32:38+08:00">
-                2022-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>为什么要空出块地方写点什么？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2022/06/26/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1775,7 +1809,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
