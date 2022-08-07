@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ue4," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -94,20 +94,15 @@
 
 
 
-<meta name="description" content="入门基础08课Q：此前房子变成黑色的？ A：世界大纲搜索light，全部改成可移动，重新构建矩形光源性能开销最大，一般不动预构建光照 静态和固定移动性的差别：1.渲染速度：静态&gt;固定2.参数修改：静态参数修改后需要构建才能看到效果3.阴影：静态无法对可移动物体（例如角色之类）产生阴影，固定可以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ue4-基础入门08 09课">
-<meta property="og:url" content="https://swansyi.github.io/2022/07/07/ue4-D4/index.html">
+<meta property="og:title" content="ue4-D11">
+<meta property="og:url" content="https://swansyi.github.io/2022/08/07/ue4-D11/index.html">
 <meta property="og:site_name" content="群青偶记">
-<meta property="og:description" content="入门基础08课Q：此前房子变成黑色的？ A：世界大纲搜索light，全部改成可移动，重新构建矩形光源性能开销最大，一般不动预构建光照 静态和固定移动性的差别：1.渲染速度：静态&gt;固定2.参数修改：静态参数修改后需要构建才能看到效果3.阴影：静态无法对可移动物体（例如角色之类）产生阴影，固定可以">
 <meta property="og:locale">
-<meta property="og:image" content="https://gitee.com/xgh0016/Images4Blog/raw/master/Images/2022-07-07.png">
-<meta property="article:published_time" content="2022-07-07T07:39:17.000Z">
-<meta property="article:modified_time" content="2022-07-09T10:52:44.214Z">
+<meta property="article:published_time" content="2022-08-07T07:31:20.000Z">
+<meta property="article:modified_time" content="2022-08-07T07:31:20.270Z">
 <meta property="article:author" content="swansyi">
-<meta property="article:tag" content="ue4">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/xgh0016/Images4Blog/raw/master/Images/2022-07-07.png">
 
 
 
@@ -136,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://swansyi.github.io/2022/07/07/ue4-D4/"/>
+  <link rel="canonical" href="https://swansyi.github.io/2022/08/07/ue4-D11/"/>
 
 
 
 
 
-  <title>ue4-基础入门08 09课 | 群青偶记</title>
+  <title>ue4-D11 | 群青偶记</title>
   
 
 
@@ -275,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://swansyi.github.io/2022/07/07/ue4-D4/">
+    <link itemprop="mainEntityOfPage" href="https://swansyi.github.io/2022/08/07/ue4-D11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -292,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ue4-基础入门08 09课</h1>
+          <h1 class="post-title" itemprop="name headline">ue4-D11</h1>
         
 
         <div class="post-meta">
@@ -304,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-07T15:39:17+08:00">
-                2022-07-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-07T15:31:20+08:00">
+                2022-08-07
               </time>
             
 
@@ -314,28 +309,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E6%8A%80/" itemprop="url" rel="index">
-                    <span itemprop="name">杂技</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -364,16 +337,7 @@
       
 
       
-        <h1 id="入门基础08课"><a href="#入门基础08课" class="headerlink" title="入门基础08课"></a>入门基础08课</h1><p>Q：此前房子变成黑色的？ A：世界大纲搜索light，全部改成可移动，重新构建<br>矩形光源性能开销最大，一般不动<br>预构建光照</p>
-<h2 id="静态和固定移动性的差别："><a href="#静态和固定移动性的差别：" class="headerlink" title="静态和固定移动性的差别："></a>静态和固定移动性的差别：</h2><p>1.渲染速度：静态&gt;固定<br>2.参数修改：静态参数修改后需要构建才能看到效果<br>3.阴影：静态无法对可移动物体（例如角色之类）产生阴影，固定可以</p>
-<span id="more"></span>
-<h2 id="自动曝光"><a href="#自动曝光" class="headerlink" title="自动曝光"></a>自动曝光</h2><p>亮暗相对变化<br>可以在“项目设置-自动曝光”关闭</p>
-<h2 id="指数级高度雾"><a href="#指数级高度雾" class="headerlink" title="指数级高度雾"></a>指数级高度雾</h2><p>远处变模糊</p>
-<hr>
-<h1 id="入门基础09课-光束效果"><a href="#入门基础09课-光束效果" class="headerlink" title="入门基础09课(光束效果)"></a>入门基础09课(光束效果)</h1><p>1.定向光源（平行光）-光束 光束遮挡 光束泛光<br>2.指数级高度雾-体积雾 （效果更真实，但开销大）<br>3.开启“体积雾” 调整平行光“体积散射强度”</p>
-<hr>
-<h1 id="7-7练习进度一览"><a href="#7-7练习进度一览" class="headerlink" title="7/7练习进度一览"></a>7/7练习进度一览</h1><p>地形+房子+光影<br><img src="https://gitee.com/xgh0016/Images4Blog/raw/master/Images/2022-07-07.png" alt="地形房子光影练习"></p>
-
+        
       
     </div>
     
@@ -388,12 +352,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ue4/" rel="tag"># ue4</a>
-          
-        </div>
-      
 
       
       
@@ -403,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/07/06/ue4-D3/" rel="next" title="ue4入门基础-07课">
-                <i class="fa fa-chevron-left"></i> ue4入门基础-07课
+              <a href="/2022/07/23/ue4-D10/" rel="next" title="ue4-D10">
+                <i class="fa fa-chevron-left"></i> ue4-D10
               </a>
             
           </div>
@@ -412,10 +370,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/07/09/ue4-D5/" rel="prev" title="ue4-入门基础10 11课">
-                ue4-入门基础10 11课 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -467,17 +421,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -552,22 +497,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%8008%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text">入门基础08课</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%92%8C%E5%9B%BA%E5%AE%9A%E7%A7%BB%E5%8A%A8%E6%80%A7%E7%9A%84%E5%B7%AE%E5%88%AB%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">静态和固定移动性的差别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%9B%9D%E5%85%89"><span class="nav-number">1.2.</span> <span class="nav-text">自动曝光</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E7%BA%A7%E9%AB%98%E5%BA%A6%E9%9B%BE"><span class="nav-number">1.3.</span> <span class="nav-text">指数级高度雾</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%8009%E8%AF%BE-%E5%85%89%E6%9D%9F%E6%95%88%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">入门基础09课(光束效果)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-7%E7%BB%83%E4%B9%A0%E8%BF%9B%E5%BA%A6%E4%B8%80%E8%A7%88"><span class="nav-number">3.</span> <span class="nav-text">7&#x2F;7练习进度一览</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
