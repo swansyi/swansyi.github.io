@@ -105,7 +105,7 @@
 <meta property="og:image" content="c:/Users/swans/AppData/Roaming/marktext/images/2023-02-12-19-24-50-image.png">
 <meta property="og:image" content="file:///C:/Users/swans/AppData/Roaming/marktext/images/2023-02-12-19-24-54-image.png">
 <meta property="article:published_time" content="2023-02-12T11:02:08.000Z">
-<meta property="article:modified_time" content="2023-02-12T16:00:02.472Z">
+<meta property="article:modified_time" content="2023-02-12T16:03:52.211Z">
 <meta property="article:author" content="swansyi">
 <meta property="article:tag" content="post-processing">
 <meta property="article:tag" content="impact basin">
@@ -394,16 +394,16 @@
 <h2 id="Changes"><a href="#Changes" class="headerlink" title="Changes"></a>Changes</h2><p>Use “model.MassVolume” to get the volume, then use “step.truvol()” to get volumes of each tracers.</p>
 <p>Then normalized the volumes, get the CDF of depth.</p>
 <p>The outcomes still not correct compared with Kring. I notice here are some problems I didn’t think of before and will optimize next week.</p>
-<ul>
-<li><p><input disabled="" type="checkbox">  How to change the size of each bins (with the for loop method I use)</p>
+<ol>
+<li><p>How to change the size of each bins (with the for loop method I use)</p>
 </li>
-<li><p><input disabled="" type="checkbox">  Are there any more effective algorithms for calculate CDF (functions in libs best)</p>
+<li><p>Are there any more effective algorithms for calculate CDF (functions in libs best)</p>
 </li>
-<li><p><input disabled="" type="checkbox">  The exact stop times of simulation</p>
+<li><p>The exact stop times of simulation</p>
 </li>
 <li><p><strong>Ignore the volumes of impactor when calculate the origin of depth (maybe).</strong> Although most of the material in the peak-ring (within 2 km under the surface) is from impactor.</p>
 </li>
-</ul>
+</ol>
 <h3 id="From-this-attempt-I-learned"><a href="#From-this-attempt-I-learned" class="headerlink" title="From this attempt I learned:"></a>From this attempt I learned:</h3><ol>
 <li>Procedures to process the data (read the data first then do analyze).</li>
 <li>Simple usage of tracer</li>
