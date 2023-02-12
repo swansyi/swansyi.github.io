@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="post-processing, impact basin," />
+  <meta name="keywords" content="post-processingimpact basin," />
 
 
 
@@ -105,9 +105,9 @@
 <meta property="og:image" content="c:/Users/swans/AppData/Roaming/marktext/images/2023-02-12-19-24-50-image.png">
 <meta property="og:image" content="file:///C:/Users/swans/AppData/Roaming/marktext/images/2023-02-12-19-24-54-image.png">
 <meta property="article:published_time" content="2023-02-12T11:02:08.000Z">
-<meta property="article:modified_time" content="2023-02-12T11:46:49.044Z">
+<meta property="article:modified_time" content="2023-02-12T15:48:52.269Z">
 <meta property="article:author" content="swansyi">
-<meta property="article:tag" content="post-processing, impact basin">
+<meta property="article:tag" content="post-processingimpact basin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="file:///C:/Users/swans/AppData/Roaming/marktext/images/2023-02-12-19-22-02-image.png">
 
@@ -371,7 +371,7 @@
 <p>读Impact</p>
 <h2 id="已完成："><a href="#已完成：" class="headerlink" title="已完成："></a>已完成：</h2><p>Kataria GRL 2017阅读<br>volume-depth画图基本完成（仍需细化）</p>
 <h2 id="未完成："><a href="#未完成：" class="headerlink" title="未完成："></a>未完成：</h2><p>Impact阅读（一点没看）<br>画图（细化）</p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><span id="more"></span>
+<span id="more"></span>
 
 <h2 id="记录："><a href="#记录：" class="headerlink" title="记录："></a>记录：</h2><h3 id="What-is-“colour-u-”-for"><a href="#What-is-“colour-u-”-for" class="headerlink" title="What is “colour[u]” for?"></a>What is “colour[u]” for?</h3><img title="" src="file:///C:/Users/swans/AppData/Roaming/marktext/images/2023-02-12-19-22-02-image.png" alt="" data-align="left">
 
@@ -382,27 +382,28 @@
 <ul>
 <li><p>First is the technique to show the outcomes. The way I drew this graph is using a CDF (cumulative distribution function) function to realize it straightly. I don’t know whether this is a proper way to calculate CDF especially for discrete data.</p>
 </li>
-<li><p>Second one is about the method to measure. About the concept of “peak-ring material”. In the paper mentioned before, there are several lines : For the purposes of this plot, we defined the peak ring to be that material within 2 km of the surface and between radii of 80–100 km in the thin-crust model and 70–100 km in the thick-crust model, based on the position of the middle of the peak ring in each scenario. I use this radium range, but for the thickness I enlarge it to 0-20km. In the second aspect I have some questions:</p>
+<li><p>Second one is about the method to measure. About the concept of “peak-ring material”. In the paper mentioned before, there are several lines : <em>For the purposes of this plot, we defined the peak ring to be that material within 2 km of the surface and between radii of 80–100 km in the thin-crust model and 70–100 km in the thick-crust model, based on the position of the middle of the peak ring in each scenario.</em> I use this radium range, but for the thickness I enlarge it to 0-20km. In the second aspect I have some questions:</p>
 </li>
 </ul>
 <h5 id="Q1-How-to-define-a-surface’s-coordinate"><a href="#Q1-How-to-define-a-surface’s-coordinate" class="headerlink" title="Q1: How to define a surface’s coordinate?"></a>Q1: How to define a surface’s coordinate?</h5><p>Read the end time of simulation, then find the surface. The time can be read by “step.time” which is synchronize with real time in life. </p>
 <h5 id="Q2-Within-2km-the-number-of-tracers-is-about-hundreds-I-think-it-is-not-very-enough-for-give-the-regular-pattern-for-depth"><a href="#Q2-Within-2km-the-number-of-tracers-is-about-hundreds-I-think-it-is-not-very-enough-for-give-the-regular-pattern-for-depth" class="headerlink" title="Q2: Within 2km the number of tracers is about hundreds, I think it is not very enough for give the regular pattern for depth."></a>Q2: Within 2km the number of tracers is about hundreds, I think it is not very enough for give the regular pattern for depth.</h5><p>Trace how tracer moves in this impact process, see how it works. The number doesn’t means the volume, so maybe don’t mind.<br>Also, if the thickness of sampling does affect the accuracy of distribution, find out the relationship of accuracy and thickness (quantity), then choose the thickness in the range which in insensitive to the outcomes.</p>
 <h5 id="Q3-After-setting-the-distance-unit-to-km-dose-the-depth-read-in-is-in-km"><a href="#Q3-After-setting-the-distance-unit-to-km-dose-the-depth-read-in-is-in-km" class="headerlink" title="Q3: After setting the distance unit to km, dose the depth read-in is in km?"></a>Q3: After setting the distance unit to km, dose the depth read-in is in km?</h5><p>Yes, use “model.setScale” to set the unit.</p>
-<h5 id="Q4-The-y-axis-means-the-cumulative-volume-of-peak-ring-materials-how-to-calculate-the-volume-of-materials-Here-I-just-use-the-number-of-tracers-to-measure-However-I-don’t-know-whether-it-is-correct"><a href="#Q4-The-y-axis-means-the-cumulative-volume-of-peak-ring-materials-how-to-calculate-the-volume-of-materials-Here-I-just-use-the-number-of-tracers-to-measure-However-I-don’t-know-whether-it-is-correct" class="headerlink" title="Q4: The y-axis means the cumulative volume of peak-ring materials, how to calculate the volume of materials. Here I just use the number of tracers to measure. However, I don’t know whether it is correct."></a>Q4: The y-axis means the cumulative volume of peak-ring materials, how to calculate the volume of materials. Here I just use the number of tracers to measure. However, I don’t know whether it is correct.</h5><p>The volume can’t be calculated by frequency, because one tracer means one annulus, the volume each tracer represents is not equal. “pySALEPlot” provide a method to get the volume of each tracer under tracer class ¬– “tru”. Which can be found in the “<em>init</em>.py” and other files.<br>  So, use the accumulated volume by dividing the depths into several bins to calculate. Then can get a true volume percentage in a certain range of depth:<br>$  percentage = \frac{volume\ under\ D\ km}{volume\ of\ sample\ choose\ from\ peak\ ring}$</p>
+<h5 id="Q4-The-y-axis-means-the-cumulative-volume-of-peak-ring-materials-how-to-calculate-the-volume-of-materials-Here-I-just-use-the-number-of-tracers-to-measure-However-I-don’t-know-whether-it-is-correct"><a href="#Q4-The-y-axis-means-the-cumulative-volume-of-peak-ring-materials-how-to-calculate-the-volume-of-materials-Here-I-just-use-the-number-of-tracers-to-measure-However-I-don’t-know-whether-it-is-correct" class="headerlink" title="Q4: The y-axis means the cumulative volume of peak-ring materials, how to calculate the volume of materials. Here I just use the number of tracers to measure. However, I don’t know whether it is correct."></a>Q4: The y-axis means the cumulative volume of peak-ring materials, how to calculate the volume of materials. Here I just use the number of tracers to measure. However, I don’t know whether it is correct.</h5><p>The volume can’t be calculated by frequency, because one tracer means one annulus, the volume each tracer represents is not equal. “pySALEPlot” provide a method to get the volume of each tracer under tracer class – “tru”. Which can be found in the “<em>init</em>.py” and other files.</p>
+<p>So, use the accumulated volume by dividing the depths into several bins to calculate. Then can get a true volume percentage in a certain range of depth:<br><strong>percentage = volume under D km / volume of sample choose from peak ring</strong></p>
 <h2 id="Changes"><a href="#Changes" class="headerlink" title="Changes"></a>Changes</h2><p>Use “model.MassVolume” to get the volume, then use “step.truvol()” to get volumes of each tracers.</p>
 <p>Then normalized the volumes, get the CDF of depth.</p>
 <p>The outcomes still not correct compared with Kring. I notice here are some problems I didn’t think of before and will optimize next week.</p>
 <ul>
-<li><p>How to change the size of each bins (with the for loop method I use)</p>
+<li><p><input disabled="" type="checkbox">  How to change the size of each bins (with the for loop method I use)</p>
 </li>
-<li><p>Are there any more effective algorithms for calculate CDF (functions in libs best)</p>
+<li><p><input disabled="" type="checkbox">  Are there any more effective algorithms for calculate CDF (functions in libs best)</p>
 </li>
-<li><p>The exact stop times of simulation</p>
+<li><p><input disabled="" type="checkbox">  The exact stop times of simulation</p>
 </li>
 <li><p><strong>Ignore the volumes of impactor when calculate the origin of depth (maybe).</strong> Although most of the material in the peak-ring (within 2 km under the surface) is from impactor.</p>
 </li>
 </ul>
-<h3 id="From-this-attempt-I-learned"><a href="#From-this-attempt-I-learned" class="headerlink" title="From this attempt I learned:"></a>From this attempt I learned:</h3><ul>
+<h3 id="From-this-attempt-I-learned"><a href="#From-this-attempt-I-learned" class="headerlink" title="From this attempt I learned:"></a>From this attempt I learned:</h3><ol>
 <li>Procedures to process the data (read the data first then do analyze).</li>
 <li>Simple usage of tracer</li>
 <li>Some simple functions to show the feature of data into figures (histogram, distribution)<br>I realize that the post-processing is very likely to data analysis, especially I finished data mining course last semester. </li>
@@ -410,7 +411,7 @@
 <li>Timestep</li>
 <li>Try to see the resource code first when don’t know</li>
 <li>How to handle the uncertainty and decrease the effect of one factor.</li>
-</ul>
+</ol>
 <h2 id="碎碎念："><a href="#碎碎念：" class="headerlink" title="碎碎念："></a>碎碎念：</h2><p>这周组会狠狠的被批斗，但是确实说得对，所以也很接受。确实之前就是摸了很多，根本没正经在弄。</p>
 <p>说的跟导师没有交流也确实，今年争取每周都烩面一次汇报。</p>
 <p>而且我也打算每天记录一下做的东西（用英文），也算是一种软积累罢，顺便练一下下writing（效果存疑）。在想怎么存放整理的时候刚好想起来之前还在吉他小屋整了个自己的技术博客，那必然是直接拿来用。希望能日更罢。</p>
@@ -431,7 +432,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/post-processing-impact-basin/" rel="tag"># post-processing, impact basin</a>
+            <a href="/tags/post-processingimpact-basin/" rel="tag"># post-processingimpact basin</a>
           
         </div>
       
@@ -599,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-6-2-11%E5%81%9A%E4%BA%86%E7%82%B9%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">2.6-2.11做了点啥</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">计划：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E5%AE%8C%E6%88%90%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">已完成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">未完成：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">记录：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-%E2%80%9Ccolour-u-%E2%80%9D-for"><span class="nav-number">2.1.1.</span> <span class="nav-text">What is “colour[u]” for?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Questions-in-Plotting"><span class="nav-number">2.1.2.</span> <span class="nav-text">Questions in Plotting</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Q1-How-to-define-a-surface%E2%80%99s-coordinate"><span class="nav-number">2.1.2.0.1.</span> <span class="nav-text">Q1: How to define a surface’s coordinate?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q2-Within-2km-the-number-of-tracers-is-about-hundreds-I-think-it-is-not-very-enough-for-give-the-regular-pattern-for-depth"><span class="nav-number">2.1.2.0.2.</span> <span class="nav-text">Q2: Within 2km the number of tracers is about hundreds, I think it is not very enough for give the regular pattern for depth.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q3-After-setting-the-distance-unit-to-km-dose-the-depth-read-in-is-in-km"><span class="nav-number">2.1.2.0.3.</span> <span class="nav-text">Q3: After setting the distance unit to km, dose the depth read-in is in km?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q4-The-y-axis-means-the-cumulative-volume-of-peak-ring-materials-how-to-calculate-the-volume-of-materials-Here-I-just-use-the-number-of-tracers-to-measure-However-I-don%E2%80%99t-know-whether-it-is-correct"><span class="nav-number">2.1.2.0.4.</span> <span class="nav-text">Q4: The y-axis means the cumulative volume of peak-ring materials, how to calculate the volume of materials. Here I just use the number of tracers to measure. However, I don’t know whether it is correct.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Changes"><span class="nav-number">2.2.</span> <span class="nav-text">Changes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#From-this-attempt-I-learned"><span class="nav-number">2.2.1.</span> <span class="nav-text">From this attempt I learned:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%8E%E7%A2%8E%E5%BF%B5%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">碎碎念：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-6-2-11%E5%81%9A%E4%BA%86%E7%82%B9%E5%95%A5"><span class="nav-number">1.</span> <span class="nav-text">2.6-2.11做了点啥</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">计划：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E5%AE%8C%E6%88%90%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">已完成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">未完成：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">记录：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-%E2%80%9Ccolour-u-%E2%80%9D-for"><span class="nav-number">1.4.1.</span> <span class="nav-text">What is “colour[u]” for?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Questions-in-Plotting"><span class="nav-number">1.4.2.</span> <span class="nav-text">Questions in Plotting</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Q1-How-to-define-a-surface%E2%80%99s-coordinate"><span class="nav-number">1.4.2.0.1.</span> <span class="nav-text">Q1: How to define a surface’s coordinate?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q2-Within-2km-the-number-of-tracers-is-about-hundreds-I-think-it-is-not-very-enough-for-give-the-regular-pattern-for-depth"><span class="nav-number">1.4.2.0.2.</span> <span class="nav-text">Q2: Within 2km the number of tracers is about hundreds, I think it is not very enough for give the regular pattern for depth.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q3-After-setting-the-distance-unit-to-km-dose-the-depth-read-in-is-in-km"><span class="nav-number">1.4.2.0.3.</span> <span class="nav-text">Q3: After setting the distance unit to km, dose the depth read-in is in km?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q4-The-y-axis-means-the-cumulative-volume-of-peak-ring-materials-how-to-calculate-the-volume-of-materials-Here-I-just-use-the-number-of-tracers-to-measure-However-I-don%E2%80%99t-know-whether-it-is-correct"><span class="nav-number">1.4.2.0.4.</span> <span class="nav-text">Q4: The y-axis means the cumulative volume of peak-ring materials, how to calculate the volume of materials. Here I just use the number of tracers to measure. However, I don’t know whether it is correct.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Changes"><span class="nav-number">1.5.</span> <span class="nav-text">Changes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#From-this-attempt-I-learned"><span class="nav-number">1.5.1.</span> <span class="nav-text">From this attempt I learned:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%8E%E7%A2%8E%E5%BF%B5%EF%BC%9A"><span class="nav-number">1.6.</span> <span class="nav-text">碎碎念：</span></a></li></ol></li></ol></div>
             
 
           </div>
